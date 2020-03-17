@@ -1,0 +1,27 @@
+{
+    "name": "pod-sdk/pod-ai-platform",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": ["sdk", "pod sdk", "pod sdk ai platform", "pod ai platform"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elham Keshtgar",
+            "email": "podsdk@fanap.ir"
+        }
+    ],
+    "description": "POD SDK AI Platform",
+
+    "require": {
+        "ext-openssl": "*",
+        "pod-sdk/pod-base-service" : "^3.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pod\\Ai\\Platform\\" : "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}

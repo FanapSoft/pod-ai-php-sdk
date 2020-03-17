@@ -1,0 +1,236 @@
+{
+  "speechToText": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "_token_": {
+          "type": "string",
+          "minLength" : 1
+        },
+        "_token_issuer_": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "_token_",
+        "_token_issuer_"
+      ],
+      "additionalProperties": true
+    },
+    "form_params": {
+      "type": "object",
+      "properties": {
+        "linkFile": {
+          "type":"string",
+          "format": "uri",
+          "minLength": 1,
+          "title": "آدرس فایل صوتی",
+          "description":"آدرس فایل صوتی"
+        },
+        "scVoucherHash": {
+          "type": "array",
+          "title": "کد تخفیف برای فراخوانی سرویس کال",
+          "description": "کد تخفیف برای فراخوانی سرویس کال",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scApiKey": {
+          "type": "string",
+          "title": "توکن برای فراخوانی سرویس کال"
+        }
+      },
+      "required": ["linkFile", "scApiKey"],
+      "additionalProperties": false
+    }
+  },
+
+  "imageProcessingAuthentication": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "_token_": {
+          "type": "string",
+          "minLength" : 1
+        },
+        "_token_issuer_": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "_token_",
+        "_token_issuer_"
+      ],
+      "additionalProperties": true
+    },
+    "form_params": {
+      "type": "object",
+      "properties": {
+        "image1": {
+          "type":"string",
+          "format": "uri",
+          "minLength": 1,
+          "title": "آدرس تصویر اصلی",
+          "description": "حداقل اندازه تصویر 240x240 و حداکثر اندازه تصویر 2080x1080 پیکسل است"
+
+        },
+        "image2": {
+          "type": "string",
+          "format": "uri",
+          "title": "آدرس تصاویری که جستجو بین آنها قرار است صورت بگیرد",
+          "description": "حداقل اندازه تصویر 240x240 و حداکثر اندازه تصویر 2080x1080 پیکسل است"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["easy", "normal", "strict"]
+        },
+        "scVoucherHash": {
+            "type": "array",
+            "title": "کد تخفیف برای فراخوانی سرویس کال",
+            "description": "کد تخفیف برای فراخوانی سرویس کال",
+            "items": {
+                "type": "string"
+            }
+        },
+        "scApiKey": {
+            "type": "string",
+            "title": "توکن برای فراخوانی سرویس کال"
+        }
+      },
+      "required": ["image1", "image2" , "mode", "scApiKey"],
+      "additionalProperties": false
+    }
+  },
+
+  "NLUBanking": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "_token_": {
+          "type": "string",
+          "minLength" : 1
+        },
+        "_token_issuer_": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "_token_",
+        "_token_issuer_"
+      ],
+      "additionalProperties": true
+    },
+    "form_params": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type":"string",
+          "minLength": 1
+        },
+        "scVoucherHash": {
+                    "type": "array",
+                    "title": "کد تخفیف برای فراخوانی سرویس کال",
+                    "description": "کد تخفیف برای فراخوانی سرویس کال",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+        "scApiKey": {
+            "type": "string",
+            "title": "توکن برای فراخوانی سرویس کال"
+        }
+      },
+      "required": ["text", "scApiKey"],
+      "additionalProperties": false
+    }
+  },
+
+  "NLUIOT": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "_token_": {
+          "type": "string",
+          "minLength" : 1
+        },
+        "_token_issuer_": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "_token_",
+        "_token_issuer_"
+      ],
+      "additionalProperties": true
+    },
+    "form_params" : {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type":"string",
+          "minLength": 1
+        },
+        "scVoucherHash": {
+          "type": "array",
+          "title": "کد تخفیف برای فراخوانی سرویس کال",
+          "description": "کد تخفیف برای فراخوانی سرویس کال",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scApiKey": {
+          "type": "string",
+          "title": "توکن برای فراخوانی سرویس کال"
+        }
+      },
+      "required": ["text", "scApiKey"],
+      "additionalProperties": false
+    }
+  },
+  
+  "licensePlateReader": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "_token_": {
+          "type": "string",
+          "minLength" : 1
+        },
+        "_token_issuer_": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "_token_",
+        "_token_issuer_"
+      ],
+      "additionalProperties": true
+    },
+    "form_params" : {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type":"string",
+          "format": "uri"
+        },
+        "isCrop": {
+          "type":["string", "boolean"]
+        },
+        "scVoucherHash": {
+          "type": "array",
+          "title": "کد تخفیف برای فراخوانی سرویس کال",
+          "description": "کد تخفیف برای فراخوانی سرویس کال",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scApiKey": {
+          "type": "string",
+          "title": "توکن برای فراخوانی سرویس کال"
+        }
+      },
+      "required": ["image", "scApiKey"],
+      "additionalProperties": false
+    }
+  }
+}
